@@ -1,11 +1,16 @@
-
-// function to display loading overlay, call ajax function resetHistory() and reload page to run a new benchmark
-function resetHistory( benchmarkName, path = "" ){
-	
+// function to display loading overlay
+function displayLoadingOverlay(loader_message){
 	// display loading overlay
 	$('div.spanner').addClass('show');
 	$('div.overlay').addClass('show');
-	$('p.loader_message').text('Resetting history for "' + benchmarkName + '" benchmark.');
+	$('p.loader_message').text(loader_message);
+}
+
+// call ajax function resetHistory() and reload page to run a new benchmark
+function resetHistory( benchmarkName, path = "" ){
+	
+	// display loading overlay
+	displayLoadingOverlay('Resetting history for "' + benchmarkName + '" benchmark.');			
 			
 	setTimeout(
 		function(){ 
@@ -25,13 +30,14 @@ function resetHistory( benchmarkName, path = "" ){
 	)
 }
 
-// function to display loading overlay and reload page to run another benchmark
+// function to reload page to run another benchmark
 function doAnotherbenchmark(){
-	// display loading overlay
-	$('div.spanner').addClass('show');
-	$('div.overlay').addClass('show');
-	$('p.loader_message').text('Running benchmark.');
-
+	displayLoadingOverlay('Running benchmark.'); // display loading overlay
 	document.location.reload();
 }
 
+// function to load page to run a benchmark
+function doBenchmark(benchmarkURL){
+	displayLoadingOverlay('Running benchmark.'); // display loading overlay
+	document.location.href = benchmarkURL;
+}

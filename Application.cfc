@@ -8,7 +8,7 @@
 	</cfscript>
 
 	<cffunction name="onApplicationStart">
-		<cfset application.benchmark_folder = "benchmarks\" />
+		<cfset application.benchmark_folder = "benchmarks/" />
 	</cffunction>
 
 	<!--- enablecfoutputonly is very important. Due to the many testloop the 

@@ -28,7 +28,8 @@
 					<div class="col">
 						<a 
 							title="start benchmark for #listFirst(variables.dirQuery.name,'.')#" 
-							href="#application.benchmark_folder##variables.dirQuery.name#" 
+							href="##"
+							onclick="doBenchmark('#application.benchmark_folder##variables.dirQuery.name#')" 
 							class="btn btn-primary btn-lg d-grid" 
 							role="button">
 							#listFirst(variables.dirQuery.name,'.')#
