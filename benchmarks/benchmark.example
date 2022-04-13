@@ -1,0 +1,48 @@
+<cfscript>
+	// *************************
+	//  YOUR CONFIGURATION HERE
+	// *************************
+	benchmark_config = {
+		testName = "your testname",
+		testDescription = "describe your test",
+		testData = "",
+		maxIterations = 100000,
+		chartwidth = 500,
+		chartheight = 500,
+		outputResults = true
+	};	
+	
+	benchmark = new benchmark( config = benchmark_config ); // init benchmark component
+	benchmark.writeHeader();
+
+	// TestBlock 1
+	benchmark.start("Example 1 - Name", "Example 1 - Description");
+
+	for(i = 1; i lte benchmark.maxIterations; i += 1) {
+		//***************************
+		// INSERT YOUR FIRST SNIPPET HERE
+		//***************************
+		result = 1;
+	}
+	
+	benchmark.end( result );
+
+
+	// TestBlock 2
+	benchmark.start("Example 2 - Name", "Example 2 - Description");
+
+	for(i = 1; i lte benchmark.maxIterations; i += 1) {
+		//***************************
+		// INSERT YOUR SECOND SNIPPET HERE
+		//***************************
+		
+		result = 1;
+	}
+	
+	benchmark.end( result );
+
+
+
+	// display results
+	benchmark.writeFooter();
+</cfscript>
